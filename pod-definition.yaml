@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: myaap-Pod
+  labels:
+  app: myapp
+
+spec:
+  containers:
+    - name: redis
+      image: redis
+
+

@@ -1,0 +1,25 @@
+NANAME     STATUS   ROLES    AGE   VERSION
+  master   Ready    master   65s   v1.16.0
+  node01   Ready    <none>   35s   v1.16.0
+  master $ kubectl get pods
+  No resources found in default namespace.
+  master $ kubectl run nginx --image=nginx --generator=run-pod/v1'
+  >
+  >
+  > ^C
+  master $ kubectl run nginx --image=nginx --generator=run-pod/v1
+  pod/nginx created
+  master $ kubectl get pods
+  NAME            READY   STATUS    RESTARTS   AGE
+  newpods-52nbv   1/1     Running   0          72s
+  newpods-cd2zl   1/1     Running   0          72s
+  newpods-r9mmx   1/1     Running   0          72s
+  nginx           1/1     Running   0          2m48s
+  master $ kubectl describe pod newpod
+Name:         newpods-52nbv
+Namespace:    default
+Priority:     0
+Node:         node01/172.17.0.31
+Start Time:   Fri, 10 Apr 2020 18:59:05 +0000
+Labels:       tier=busybox
+Annotations:  <none>
